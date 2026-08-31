@@ -52,3 +52,14 @@ For exact small text, request `production-overlay mode`. The skill will reserve 
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Example outputs
+
+These examples demonstrate how the character surface, colour palette, print texture, and typography rhythm are fused into different graphic layout systems.
+
+<p align="center">
+  <img src="examples/editorial-fusion-cobalt.png" alt="Cobalt editorial fusion example" width="48%" />
+  <img src="examples/editorial-fusion-vermilion.png" alt="Vermilion editorial fusion example" width="48%" />
+</p>
+
+The examples are unofficial AI-generated workflow demonstrations only. They do not include source/reference images and are not affiliated with any depicted character's rights holders.
