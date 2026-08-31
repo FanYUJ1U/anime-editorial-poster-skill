@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anime Editorial Poster"
+  short_description: "Create premium anime magazine posters"
+  default_prompt: "Create a refined anime fashion editorial poster prompt from my character and reference images."
