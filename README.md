@@ -1,65 +1,127 @@
-# Anime Editorial Poster
+# Anime Editorial Poster Skill
 
-A reusable Codex skill for creating anime fashion-editorial posters from separate character, outfit, pose, layout, lighting, and copy references.
+Reference-driven anime editorial poster skill.
 
-It is built for character-special posters and magazine-cover artwork where the figure must belong to the layout system—not look like an illustration pasted over a background.
+当前版本：**v2.0.0**
 
-## What it controls
-
-- Reference-role separation: character identity, outfit construction, pose/camera, layout, and lighting do not bleed into each other.
-- Editorial fusion: the figure derives palette, contrast, contour treatment, shadows, and selected print texture from the assigned layout reference.
-- Surface cleanup: fabric folds, highlights, and hair remain structured and intentional while approved background print texture is preserved.
-- Story-safe copy: character names and canon claims are verified before use; unknown details fall back to character-informed or story-neutral copy.
-- Reliable typography handoff: exact strings can be delivered as an editable overlay plan instead of relying on an image model to render dense text correctly.
-- Targeted revisions: specific repair routes for likeness, copy, clothing, pose, AI noise, layout fusion, and typographic failure.
-
-## Install
-
-Copy or clone this folder into your local Codex skills directory, then restart or refresh the skills environment.
+## 文件结构
 
 ```text
-~/.codex/skills/anime-editorial-poster/
-├── SKILL.md
-└── agents/openai.yaml
+anime-editorial-poster/
+├─ SKILL.md        # Skill 主文件，安装时使用
+├─ README.md       # 使用与 GitHub 更新说明
+├─ CHANGELOG.md    # 版本更新记录
+├─ VERSION         # 当前版本号
+└─ .gitignore
 ```
 
-The public repository intentionally contains no user-uploaded images, copyrighted character art, generated poster outputs, or commercial assets.
+## 安装
 
-## Use
+### 方式 A：直接安装 SKILL.md
 
-Provide references with explicit roles, for example:
+使用仓库根目录中的 `SKILL.md` 作为 Skill 文件。
+
+如果你的 Skill 管理界面支持上传文件：
+1. 下载 `SKILL.md`
+2. 进入 Skill 安装 / 管理界面
+3. 上传 `SKILL.md`
+4. Skill 名称应识别为 `anime-editorial-poster`
+
+### 方式 B：从 GitHub 管理
+
+建议 GitHub 仓库名：
 
 ```text
-Image 1: character identity
-Image 2: outfit construction
-Image 3: pose and camera
-Image 4: layout reference
-
-Character: Subaru Awa, Girls Band Cry
-Copy: canon-informed; exact title required
+anime-editorial-poster
 ```
 
-For exact small text, request `production-overlay mode`. The skill will reserve type zones in the image prompt and supply editable strings with placement guidance for Photoshop, Figma, or InDesign.
+仓库根目录必须保留：
 
-## Design principles
+```text
+SKILL.md
+```
 
-1. Preserve identity without borrowing faces or expressions from unrelated references.
-2. Extract each layout reference's own visual system; never apply a fixed house palette by default.
-3. Keep the face, hands, and focal details clean; confine print texture to intentional non-focal areas.
-4. Do not invent story facts from resemblance. Distinguish canon fact, creative interpretation, and decorative copy.
-5. Do not reproduce individual reference artworks. Use visual principles, not copied elements.
+这样后续只需要更新该文件即可保持 Skill 本体同步。
 
-## License
+## 调用示例
 
-MIT. See [LICENSE](LICENSE).
+```text
+使用 anime-editorial-poster-skill。
 
-## Example outputs
+图一：版式参考
+图二：服装参考
+图三：角色参考
+姿势：按照图一版式自动设计
+文字：结合角色故事背景自动生成
+要求：角色必须融入图一的版式设计语言，不是简单换角色
+比例：3:4
+```
 
-These examples demonstrate how the character surface, colour palette, print texture, and typography rhythm are fused into different graphic layout systems.
+## GitHub 首次发布
 
-<p align="center">
-  <img src="examples/editorial-fusion-cobalt.png" alt="Cobalt editorial fusion example" width="48%" />
-  <img src="examples/editorial-fusion-vermilion.png" alt="Vermilion editorial fusion example" width="48%" />
-</p>
+在本地创建仓库后：
 
-The examples are unofficial AI-generated workflow demonstrations only. They do not include source/reference images and are not affiliated with any depicted character's rights holders.
+```bash
+git init
+git add .
+git commit -m "feat: release anime-editorial-poster v2.0.0"
+git branch -M main
+git remote add origin <你的GitHub仓库地址>
+git push -u origin main
+```
+
+建议同时创建版本标签：
+
+```bash
+git tag -a v2.0.0 -m "anime-editorial-poster v2.0.0"
+git push origin v2.0.0
+```
+
+## 后续更新 Skill
+
+例如升级到 v2.1.0：
+
+1. 修改 `SKILL.md`
+2. 把 frontmatter 中的 `version` 改为 `2.1.0`
+3. 把 `VERSION` 改为 `2.1.0`
+4. 在 `CHANGELOG.md` 顶部增加 v2.1.0 更新说明
+5. 提交并推送：
+
+```bash
+git add SKILL.md VERSION CHANGELOG.md README.md
+git commit -m "feat: update anime-editorial-poster to v2.1.0"
+git push
+```
+
+6. 发布版本标签：
+
+```bash
+git tag -a v2.1.0 -m "anime-editorial-poster v2.1.0"
+git push origin v2.1.0
+```
+
+## 推荐版本规则
+
+采用 Semantic Versioning：
+
+```text
+MAJOR.MINOR.PATCH
+```
+
+- `2.0.1`：修正文案、负面词、轻微规则
+- `2.1.0`：增加新的版式分析、角色处理、输出能力
+- `3.0.0`：改变核心工作流或参考图职责体系
+
+## 更新原则
+
+每次更新尽量只修改真正需要变化的规则，不要无理由重写整个 Skill。
+
+重点检查：
+
+- Character Reference 是否仍只负责角色
+- Outfit Reference 是否仍只负责服装
+- Pose Reference 是否出现身份串味
+- Layout Reference 是否保持最高视觉系统权重
+- 用户当前明确要求是否仍高于默认规则
+- 默认白底 / Didone / 低饱和是否只作为 fallback
+- Character × Layout Integration 是否仍是核心能力
