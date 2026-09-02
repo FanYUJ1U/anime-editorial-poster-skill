@@ -1,5 +1,5 @@
 # Anime Editorial Poster Skill v2.0.0
-
+求求你们点点星标 
 [English](#english) · [中文](#中文)
 
 ---
