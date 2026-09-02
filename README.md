@@ -1,6 +1,39 @@
 # Anime Editorial Poster Skill v2.0.0
-求求你们点点星标 
-[English](#english) · [中文](#中文)
+
+> **Copyright © 2026 FanYUJIU. All rights reserved.**  
+> First published: **September 1, 2026** · Author: **FanYUJIU**
+
+[English](#english) · [中文](#中文) · [版权与授权](#版权与授权) · [Copyright & permissions](#copyright--permissions)
+
+---
+
+## 版权与授权
+
+本仓库及其中的 `SKILL.md`、提示词架构、工作流设计、文档、示例图与其他原创内容，著作权均归 **FanYUJIU** 所有。首次发布时间为 **2026 年 9 月 1 日**。
+
+除作者书面许可外，任何人不得：
+
+- 将本仓库或其任何部分用于商业项目、付费服务、接单、销售、培训、广告或其他营利活动；
+- 修改、改编、拆分、翻译或基于本项目制作衍生版本后发布；
+- 复制、转载、镜像、打包、再分发或上传至其他平台、仓库、社区、网盘或 Skill 市场；
+- 删除、遮挡、篡改作者署名、版权声明或来源信息；
+- 将本项目或其内容声明为自己的原创成果，或以自己的名义申请版权、商标或其他权利。
+
+允许的范围仅限于个人、非商业的学习与本地体验；该允许不包含转授权、再发布或对外提供下载。Fork、Clone 或下载仅用于 GitHub 平台功能或个人本地查看，**不构成任何商业使用、修改或再发布授权**。
+
+如需商业合作、二次开发、转载、翻译、发布衍生版本或其他授权，请先通过 GitHub 联系作者 **FanYUJIU** 并获得书面同意。
+
+---
+
+## Copyright & permissions
+
+Copyright © 2026 **FanYUJIU**. All rights reserved. First published on **September 1, 2026**.
+
+Unless you receive prior written permission from the author, you may not use this repository or any part of it for commercial purposes; modify, adapt, translate, or publish derivative versions; redistribute, mirror, package, or upload it elsewhere; remove attribution or copyright notices; or claim any part of it as your own work.
+
+Personal, non-commercial learning and local evaluation are permitted only. This does not grant a sublicense, distribution right, publication right, or commercial license. Forking, cloning, or downloading does **not** grant permission for commercial use, modification, or republication.
+
+For commercial collaboration, derivative work, translation, republication, or any other use beyond the permission above, contact **FanYUJIU** through GitHub and obtain written approval first.
 
 ---
 
@@ -10,7 +43,7 @@
 
 Anime Editorial Poster v2 is designed to create anime editorial posters from multiple references while keeping the role of each reference isolated and controllable.
 
-v2 replaces the fixed v1 fashion-poster formula with a **layout-reference-driven visual system**. Character identity, outfit, pose, typography, colour, lighting, print texture, and copywriting are rebuilt to belong to one coherent composition.
+v2 replaces the fixed v1 fashion-poster formula with a **layout-reference-driven visual system**. Character identity, outfit, pose, typography, colour, lighting, print texture, and copywriting are rebuilt to belong to one coherent composition.
 
 ## Core idea
 
@@ -28,7 +61,7 @@ v1 relied on a relatively fixed editorial formula:
 - hard cast shadows
 - minimal editorial composition
 
-v2 changes from **style-template driven** to **reference-system driven**:
+v2 changes from **style-template driven** to **reference-system driven**:
 
 - layout reference defines the visual language
 - typography follows the reference instead of defaulting to Didone
@@ -42,6 +75,7 @@ v2 changes from **style-template driven** to **reference-system driven**:
 ## Reference responsibility system
 
 ### Character Reference
+
 Controls:
 
 - face identity
@@ -55,6 +89,7 @@ Controls:
 Does not automatically control outfit, pose, layout, background, or lighting.
 
 ### Outfit Reference
+
 Controls:
 
 - silhouette
@@ -73,6 +108,7 @@ Controls:
 Does not inherit the model's identity, hairstyle, pose, or background.
 
 ### Pose Reference
+
 Controls:
 
 - body gesture
@@ -86,6 +122,7 @@ Controls:
 Does not inherit identity, outfit, hairstyle, or colour palette.
 
 ### Layout / Editorial Reference
+
 Controls the complete poster system:
 
 - composition skeleton
@@ -147,7 +184,7 @@ Typical copy layers:
 - **Issue / Chapter / Number**
 - decorative Romanized / English / Japanese fragments
 
-Avoid generic filler such as `FREEDOM / DREAM / BEAUTY / NIGHT` unless genuinely relevant. Do not fabricate official dialogue.
+Avoid generic filler such as `FREEDOM / DREAM / BEAUTY / NIGHT` unless genuinely relevant. Do not fabricate official dialogue.
 
 ## Character × layout integration
 
@@ -189,7 +226,7 @@ These labels are descriptive only. The reference itself remains the source of tr
 
 ## Example invocation
 
-```text
+```
 Use anime-editorial-poster-skill.
 
 Image 1: layout reference
@@ -199,26 +236,25 @@ Pose: design automatically from Image 1
 Copy: generate from the character's story background
 Requirement: integrate the character into the layout system instead of simply replacing the original character
 Aspect ratio: 3:4
+
 ```
 
 Internal mapping:
 
-```text
+```
 REF 1 = Layout
 REF 2 = Outfit
 REF 3 = Character
 POSE = Layout-driven auto pose
 COPY = Character-driven
+
 ```
 
 ## Example outputs
 
 These examples demonstrate how the character surface, colour palette, print texture, and typography rhythm are fused into different graphic layout systems.
 
-<p align="center">
-  <img src="examples/editorial-fusion-cobalt.png" alt="Cobalt editorial fusion example" width="48%" />
-  <img src="examples/editorial-fusion-vermilion.png" alt="Vermilion editorial fusion example" width="48%" />
-</p>
+[Cobalt editorial fusion example](https://github.com/FanYUJ1U/anime-editorial-poster-skill/blob/main/examples/editorial-fusion-cobalt.png) ([image](https://github.com/FanYUJ1U/anime-editorial-poster-skill/raw/main/examples/editorial-fusion-cobalt.png)) [Vermilion editorial fusion example](https://github.com/FanYUJ1U/anime-editorial-poster-skill/blob/main/examples/editorial-fusion-vermilion.png) ([image](https://github.com/FanYUJ1U/anime-editorial-poster-skill/raw/main/examples/editorial-fusion-vermilion.png))
 
 The examples are unofficial AI-generated workflow demonstrations only. They do not include source/reference images and are not affiliated with any depicted character's rights holders.
 
@@ -226,7 +262,7 @@ The examples are unofficial AI-generated workflow demonstrations only. They do n
 
 Recommended repository structure:
 
-```text
+```
 anime-editorial-poster/
 ├── SKILL.md
 ├── README.md
@@ -235,26 +271,28 @@ anime-editorial-poster/
 ├── CHANGELOG.md
 ├── VERSION
 └── examples/
+
 ```
 
-Install or import the root `SKILL.md`.
+Install or import the root `SKILL.md`.
 
 Current version:
 
-```text
+```
 2.0.0
+
 ```
 
 ## Updating
 
-For an update such as `v2.1.0`:
+For an update such as `v2.1.0`:
 
-1. modify `SKILL.md`
-2. update `VERSION`
-3. add release notes to `CHANGELOG.md`
+1. modify `SKILL.md`
+2. update `VERSION`
+3. add release notes to `CHANGELOG.md`
 4. update the README files if behaviour changes
 
-```bash
+```
 git add .
 git commit -m "feat: update anime-editorial-poster to v2.1.0"
 git push origin main
@@ -274,7 +312,6 @@ This repository provides a workflow and prompt-architecture skill only.
 
 Users are responsible for ensuring that their use of character references, trademarks, copyrighted artwork, likenesses, and generated outputs complies with applicable rights and platform policies.
 
-
 ---
 
 # 中文
@@ -283,7 +320,7 @@ Users are responsible for ensuring that their use of character references, trade
 
 Anime Editorial Poster v2 用于把角色、服装、姿势、版式等不同参考图拆分职责，再重新组织成一张统一的动漫 Editorial 海报。
 
-v2 不再沿用 v1 固定的“白底 + Didone + 低饱和 + 硬投影”公式，而是把 **版式参考作为整张作品的视觉母系统**，再让角色身份、服装、姿势、字体、配色、光影、印刷纹理和文案共同适配它。
+v2 不再沿用 v1 固定的“白底 + Didone + 低饱和 + 硬投影”公式，而是把 **版式参考作为整张作品的视觉母系统**，再让角色身份、服装、姿势、字体、配色、光影、印刷纹理和文案共同适配它。
 
 ## 核心理念
 
@@ -301,7 +338,7 @@ v1 更接近固定 Editorial 模板：
 - 明显硬投影
 - 极简杂志式构图
 
-v2 从 **固定模板驱动** 升级为 **参考系统驱动**：
+v2 从 **固定模板驱动** 升级为 **参考系统驱动**：
 
 - 版式参考决定整体视觉语言
 - 字体跟随参考，不再默认 Didone
@@ -426,7 +463,7 @@ v2 从 **固定模板驱动** 升级为 **参考系统驱动**：
 - **Issue / Chapter / Number / 编号系统**
 - 英文 / 罗马字 / 日文碎片装饰文字
 
-避免把 `FREEDOM / DREAM / BEAUTY / NIGHT` 等泛化词机械套用到所有角色，也不得把 AI 生成文案伪装成官方台词。
+避免把 `FREEDOM / DREAM / BEAUTY / NIGHT` 等泛化词机械套用到所有角色，也不得把 AI 生成文案伪装成官方台词。
 
 ## 人物 × 版式融合
 
@@ -468,7 +505,7 @@ v2 可以根据参考图适配：
 
 ## 推荐调用方式
 
-```text
+```
 使用 anime-editorial-poster-skill。
 
 图一：版式参考
@@ -478,26 +515,25 @@ v2 可以根据参考图适配：
 文字：结合角色故事背景自动生成
 要求：角色必须融入图一的版式设计语言，不是简单换角色
 比例：3:4
+
 ```
 
 内部映射：
 
-```text
+```
 REF 1 = Layout
 REF 2 = Outfit
 REF 3 = Character
 POSE = Layout-driven auto pose
 COPY = Character-driven
+
 ```
 
 ## 示例效果
 
 下面的示例用于展示角色表面处理、色彩系统、印刷纹理和字体节奏如何融入不同的图形版式系统。
 
-<p align="center">
-  <img src="examples/editorial-fusion-cobalt.png" alt="Cobalt editorial fusion example" width="48%" />
-  <img src="examples/editorial-fusion-vermilion.png" alt="Vermilion editorial fusion example" width="48%" />
-</p>
+[Cobalt editorial fusion example](https://github.com/FanYUJ1U/anime-editorial-poster-skill/blob/main/examples/editorial-fusion-cobalt.png) ([image](https://github.com/FanYUJ1U/anime-editorial-poster-skill/raw/main/examples/editorial-fusion-cobalt.png)) [Vermilion editorial fusion example](https://github.com/FanYUJ1U/anime-editorial-poster-skill/blob/main/examples/editorial-fusion-vermilion.png) ([image](https://github.com/FanYUJ1U/anime-editorial-poster-skill/raw/main/examples/editorial-fusion-vermilion.png))
 
 以上示例仅为非官方 AI 生成工作流演示，不包含原始 / 参考图片，也不代表与示例中涉及角色的任何权利方存在关联、合作或授权关系。
 
@@ -505,7 +541,7 @@ COPY = Character-driven
 
 推荐仓库结构：
 
-```text
+```
 anime-editorial-poster/
 ├── SKILL.md
 ├── README.md
@@ -514,14 +550,16 @@ anime-editorial-poster/
 ├── CHANGELOG.md
 ├── VERSION
 └── examples/
+
 ```
 
-安装时使用仓库根目录的 `SKILL.md`。
+安装时使用仓库根目录的 `SKILL.md`。
 
 当前版本：
 
-```text
+```
 2.0.0
+
 ```
 
 ## 正式排版注意事项
@@ -539,4 +577,3 @@ AI 生图模型对精确小文字仍可能不稳定。
 本仓库仅提供工作流与 Prompt 架构 Skill。
 
 使用者应自行确认角色参考、商标、版权素材、人物形象及最终生成内容的使用方式符合相关权利要求与平台规则。
-
